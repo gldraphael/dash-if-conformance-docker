@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  dashifct:
+    container_name: dashifct
+    image: localdash-in-conformance-test
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # restart: on-failure
+    ports:
+      - 8030:80
+    volumes:
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
